@@ -223,9 +223,11 @@ console.log(starWarsCharacters);
   Una volta fatto crea un console.log per controllare la proprietà length di "charactersNames" prima e dopo l'operazione.
 */
 
-for (i = 0; i < charactersNames.length; i++) {
-  if (!femaleCharacters.includes(charactersNames[i].name)) {
-    femaleCharacters.push(charactersNames[i].name);
+for (let i = 0; i < charactersNames.length; i++) {
+  for (let j = 0; j < femaleCharacters.length; j++) {
+    if (charactersNames[i] === femaleCharacters[j].name) {
+      charactersNames.splice(i, 1);
+    }
   }
 }
 console.log(charactersNames);
